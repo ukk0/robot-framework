@@ -1,7 +1,6 @@
 *** Settings ***
 Library    SeleniumLibrary
 Library    Collections
-Library    resources/custom_keywords/Checkout.py
 
 *** Keywords ***
 Open the browser with the login form

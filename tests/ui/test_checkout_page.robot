@@ -1,7 +1,7 @@
 *** Settings ***
 Documentation    Tests to validate main shopping page scenarios
-Resource    ../../resources/ui/variables.robot
 Resource    ../../resources/ui/keywords.robot
+Library    ../../resources/custom_keywords/Checkout.py
 Test Setup    Open the browser with the main shop page
 Test Teardown    Close Browser
 

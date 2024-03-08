@@ -1,8 +1,3 @@
-*** Settings ***
-Library    SeleniumLibrary
-Library    Collections
-Library    BuiltIn
-
 *** Variables ***
 ${test_website_inventory_url}    https://www.saucedemo.com/inventory.html
 ${successful_login_user}    standard_user

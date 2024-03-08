@@ -1,2 +1,4 @@
 robotframework==7.0
+robotframework-pabot==2.18.0
+robotframework-requests==0.9.6
 robotframework-seleniumlibrary==6.2.0
