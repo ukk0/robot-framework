@@ -1,12 +1,19 @@
 [tool.robotidy]
-verbose = false
+diff = true
+overwrite = true
+verbose = true
 separator = "space"
 spacecount = 2
 indent = 4
 line_length = 120
 lineseparator = "native"
 configure = [
-    "AlignVariablesSection:enabled=True"
+    "AlignKeywordsSection:alignment_type=auto",
+    "AlignSettingsSection",
+    "AlignTemplatedTestCases",
+    "AlignTestCasesSection",
+    "AlignVariablesSection:enabled=True",
+    "DiscardEmptySections:enabled=False"
 ]
 
 [tool.robocop]
