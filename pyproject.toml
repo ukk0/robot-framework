@@ -1,6 +1,6 @@
 [tool.robotidy]
 diff = true
-overwrite = true
+overwrite = false
 verbose = true
 separator = "space"
 spacecount = 2
@@ -13,7 +13,8 @@ configure = [
     "AlignTemplatedTestCases",
     "AlignTestCasesSection",
     "AlignVariablesSection:enabled=True",
-    "DiscardEmptySections:enabled=False"
+    "DiscardEmptySections:enabled=False",
+    "NormalizeNewLines:section_lines=1:test_case_lines=1:keyword_lines=1"
 ]
 
 [tool.robocop]
