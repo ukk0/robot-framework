@@ -1,13 +1,12 @@
 *** Settings ***
 Library    RequestsLibrary
 Library    Collections
-Resource    ../../resources/api/variables.robot
 
 *** Keywords ***
 Create new booking payload
     [Arguments]    ${first_name}    ${last_name}    ${total_price}    ${deposit_paid}
     ${dates_dict} =    Create Dictionary    checkin=2024-01-01    checkout=2024-02-01
-    ${booking_dict} =    Create Dictionary    
+    ${booking_dict} =    Create Dictionary
     ...            firstname=${first_name}
     ...            lastname=${last_name}
     ...            totalprice=${total_price}

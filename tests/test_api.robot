@@ -1,7 +1,10 @@
 *** Settings ***
 Documentation    Tests to check Restful booker API functionality
-Resource    ../../resources/api/variables.robot
-Resource    ../../resources/api/keywords.robot
+Resource    ../resources/api_keywords.robot
+
+*** Variables ***
+${base_url} =    https://restful-booker.herokuapp.com
+${authorization} =    Basic YWRtaW46cGFzc3dvcmQxMjM=
 
 *** Test Cases ***
 Validate a new booking can be created with a valid payload

@@ -1,9 +1,17 @@
 *** Settings ***
 Documentation    Tests to validate main shopping page scenarios
-Resource    ../../resources/ui/variables.robot
-Resource    ../../resources/ui/keywords.robot
+Resource    ../resources/ui_keywords.robot
+
 Test Setup    Open the browser with the main shop page
 Test Teardown    Close Browser
+
+*** Variables ***
+@{expected_items}  Sauce Labs Backpack  
+...                Sauce Labs Bike Light  
+...                Sauce Labs Bolt T-Shirt
+...                Sauce Labs Fleece Jacket
+...                Sauce Labs Onesie
+...                Test.allTheThings() T-Shirt (Red)
 
 *** Test Cases ***
 Validate that all side menu works and all options are available
