@@ -51,29 +51,36 @@ List all inventory items
 
 Compare actual and expected inventory items
     [Arguments]  @{args}
+    [Documentation]  test
+
     List Should Contain Sub List  ${args[0]}  ${args[1]}
 
 Add inventory item to basket
     [Arguments]  ${item}
+
     ${locator} =  Set Variable  css:[data-test=add-to-cart-${item}]
     Click Button  ${locator}
 
 Remove inventory item from basket
     [Arguments]  ${item}
+
     ${locator} =  Set Variable  css:[data-test=remove-${item}]
     Click Button  ${locator}
 
 Check inventory item count match
     [Arguments]  ${expected_count}
+
     ${count_of_items} =  Get Text  class:shopping_cart_badge
     Should Be Equal  ${count_of_items}  ${expected_count}
 
 Select inventory sorting option
     [Arguments]  ${sort_option}
+
     Select From List By Value  class:product_sort_container  ${sort_option}
 
 Compare inventory list orders
     [Arguments]  ${original_ordering}  ${current_ordering}  ${should_equal}
+
     IF  ${should_equal} == True
         Lists Should Be Equal  ${original_ordering}  ${current_ordering}
     ELSE

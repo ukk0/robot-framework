@@ -9,12 +9,10 @@ line_length = 120
 lineseparator = "native"
 configure = [
     "AlignKeywordsSection:alignment_type=auto",
-    "AlignSettingsSection",
-    "AlignTemplatedTestCases",
-    "AlignTestCasesSection",
-    "AlignVariablesSection:enabled=True",
+    "AlignSettingsSection:enabled=True",
     "DiscardEmptySections:enabled=False",
-    "NormalizeNewLines:section_lines=1:test_case_lines=1:keyword_lines=1"
+    "NormalizeNewLines:section_lines=1:test_case_lines=1:keyword_lines=1",
+    "OrderSettings:keyword_before=arguments,documentation"
 ]
 
 [tool.robocop]
@@ -22,9 +20,11 @@ exclude = [
     "missing-doc-keyword",
     "missing-doc-test-case",
     "missing-doc-resource-file",
-    "missing-trailing-blank-line"
+    "missing-trailing-blank-line",
+    "wrong-import-order"
 ]
 configure = [
+    "empty-lines-between-sections:empty_lines:1",
     "wrong-case-in-keyword-name:convention:first_word_capitalized",
     "too-many-calls-in-keyword:max_calls:20",
     "file-too-long:max_lines:500",

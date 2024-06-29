@@ -21,7 +21,7 @@ Validate that all side menu works and all options are available
     Close the shop side menu
 
 Validate that all expected products are displayed
-    ${actual_items} =  List all inventory items
+    ${actual_items}=  List all inventory items
     Compare actual and expected inventory items  ${actual_items}  ${expected_items}
 
 Validate that items can be added to and removed from basket

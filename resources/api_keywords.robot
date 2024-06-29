@@ -9,8 +9,8 @@ ${authorization}    Basic YWRtaW46cGFzc3dvcmQxMjM=
 *** Keywords ***
 Create new booking payload
     [Arguments]  ${first_name}  ${last_name}  ${total_price}  ${deposit_paid}
-    ${dates_dict} =  Create Dictionary  checkin=2024-01-01  checkout=2024-02-01
-    ${booking_dict} =  Create Dictionary
+    ${dates_dict}=  Create Dictionary  checkin=2024-01-01  checkout=2024-02-01
+    ${booking_dict}=  Create Dictionary
     ...  firstname=${first_name}
     ...  lastname=${last_name}
     ...  totalprice=${total_price}
@@ -21,7 +21,7 @@ Create new booking payload
 
 Convert response body to json
     [Arguments]  ${response}
-    ${response_json} =  Evaluate  json.loads('''${response.content}''')
+    ${response_json}=  Evaluate  json.loads('''${response.content}''')
     RETURN  ${response_json}
 
 Compare request body to response body
@@ -37,11 +37,11 @@ Compare request body to response body
 
 Find existing bookings by first and last name
     [Arguments]  ${first_name}  ${last_name}
-    ${query_params} =  Create Dictionary  firstname=${first_name}  lastname=${last_name}
-    ${response} =  GET  ${base_url}/booking  params=${query_params}  expected_status=200
-    ${response_json} =  Convert response body to json  ${response}
+    ${query_params}=  Create Dictionary  firstname=${first_name}  lastname=${last_name}
+    ${response}=  GET  ${base_url}/booking  params=${query_params}  expected_status=200
+    ${response_json}=  Convert response body to json  ${response}
     RETURN  ${response_json}
 
 Create headers with basic authorization
-    ${headers} =  Create Dictionary  Authorization=${authorization}
+    ${headers}=  Create Dictionary  Authorization=${authorization}
     RETURN  ${headers}
