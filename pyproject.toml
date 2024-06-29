@@ -1,0 +1,22 @@
+[tool.robotidy]
+spacecount = 4
+continuation-indent = 4
+transform = [
+   "AlignKeywordsSection:alignment_type=fixed"
+]
+configure = [
+    "SplitTooLongLine:split_on_every_arg=False"
+]
+
+[tool.robocop]
+exclude = [
+    "missing-doc-keyword",
+    "missing-doc-test-case",
+    "missing-doc-resource-file"
+]
+configure = [
+    "wrong-case-in-keyword-name:convention:first_word_capitalized",
+    "too-many-calls-in-keyword:max_calls:20",
+    "file-too-long:max_lines:500",
+    "too-many-arguments:max_args:10"
+]
