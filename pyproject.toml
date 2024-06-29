@@ -1,18 +1,20 @@
 [tool.robotidy]
-spacecount = 4
-continuation-indent = 4
-transform = [
-   "AlignKeywordsSection:alignment_type=fixed"
-]
+verbose = false
+separator = "space"
+spacecount = 2
+indent = 4
+line_length = 120
+lineseparator = "native"
 configure = [
-    "SplitTooLongLine:split_on_every_arg=False"
+    "AlignVariablesSection:enabled=True"
 ]
 
 [tool.robocop]
 exclude = [
     "missing-doc-keyword",
     "missing-doc-test-case",
-    "missing-doc-resource-file"
+    "missing-doc-resource-file",
+    "missing-trailing-blank-line"
 ]
 configure = [
     "wrong-case-in-keyword-name:convention:first_word_capitalized",
